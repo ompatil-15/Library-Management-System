@@ -21,3 +21,6 @@ class Library:
                 book.is_borrowed = True
                 return
         raise Exception("Book not found")
+
+    def view_available_books(self):
+        return [book for book in self.books if not book.is_borrowed]
