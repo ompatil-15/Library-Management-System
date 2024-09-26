@@ -29,17 +29,6 @@ class TestLibrary(unittest.TestCase):
         library.borrow_book("123")
         library.return_book("123")
         self.assertFalse(book.is_borrowed)
-    
-    def return_book(self, book_id):
-        for book in self.books:
-            if book.book_id == book_id:
-                if not book.is_borrowed:
-                    raise Exception("Book is not borrowed")
-                book.is_borrowed = False
-                return
-        raise Exception("Book not found")
-
-
 
 if __name__ == '__main__':
     unittest.main()
